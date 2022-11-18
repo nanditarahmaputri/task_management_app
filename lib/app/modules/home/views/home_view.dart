@@ -36,6 +36,39 @@ class HomeView extends GetView<HomeController> {
                           Container(
                             height: 40,
                             width: 100,
+                            decoration: Get.currentRoute == '/home'
+                                ? BoxDecoration(
+                                    borderRadius: BorderRadius.circular(40),
+                                    color: Colors.white,
+                                  )
+                                : BoxDecoration(),
+                            child: const Icon(
+                              Ionicons.desktop,
+                              color: Colors.grey,
+                              size: 30,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Text(
+                            'Home',
+                            style: TextStyle(
+                              color: Colors.grey,
+                              fontSize: 16,
+                            ),
+                          ),
+                        ]),
+                      )),
+                    ),
+                    SizedBox(
+                      height: 100,
+                      child: Center(
+                          child: InkWell(
+                        child: Column(children: [
+                          Container(
+                            height: 40,
+                            width: 100,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(40),
                                 color: Colors.white),
@@ -57,7 +90,97 @@ class HomeView extends GetView<HomeController> {
                           ),
                         ]),
                       )),
-                    )
+                    ),
+                    SizedBox(
+                      height: 100,
+                      child: Center(
+                          child: InkWell(
+                        child: Column(children: [
+                          Container(
+                            height: 40,
+                            width: 100,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(40),
+                                color: Colors.white),
+                            child: const Icon(
+                              Ionicons.desktop,
+                              color: Colors.grey,
+                              size: 30,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Text(
+                            'Home',
+                            style: TextStyle(
+                              color: Colors.grey,
+                              fontSize: 16,
+                            ),
+                          ),
+                        ]),
+                      )),
+                    ),
+                    SizedBox(
+                      height: 100,
+                      child: Center(
+                          child: InkWell(
+                        child: Column(children: [
+                          Container(
+                            height: 40,
+                            width: 100,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(40),
+                                color: Colors.white),
+                            child: const Icon(
+                              Ionicons.desktop,
+                              color: Colors.grey,
+                              size: 30,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Text(
+                            'Home',
+                            style: TextStyle(
+                              color: Colors.grey,
+                              fontSize: 16,
+                            ),
+                          ),
+                        ]),
+                      )),
+                    ),
+                    SizedBox(
+                      height: 100,
+                      child: Center(
+                          child: InkWell(
+                        child: Column(children: [
+                          Container(
+                            height: 40,
+                            width: 100,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(40),
+                                color: Colors.white),
+                            child: const Icon(
+                              Ionicons.desktop,
+                              color: Colors.grey,
+                              size: 30,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Text(
+                            'Home',
+                            style: TextStyle(
+                              color: Colors.grey,
+                              fontSize: 16,
+                            ),
+                          ),
+                        ]),
+                      )),
+                    ),
                   ],
                 )),
               ),
