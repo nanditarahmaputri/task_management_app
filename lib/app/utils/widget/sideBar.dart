@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:task_management_app/app/routes/app_pages.dart';
 import 'package:task_management_app/app/utils/style/AppColor.dart';
+import 'package:unicons/unicons.dart';
 
 class SideBar extends StatelessWidget {
   const SideBar({
@@ -50,8 +51,8 @@ class SideBar extends StatelessWidget {
                             : const BoxDecoration(),
                         child: Icon(
                           Get.currentRoute == '/home'
-                              ? Ionicons.desktop
-                              : Ionicons.desktop_outline,
+                              ? UniconsLine.desktop
+                              : UniconsLine.desktop,
                           color: AppColors.primaryText,
                           size: 30,
                         ),
@@ -88,8 +89,8 @@ class SideBar extends StatelessWidget {
                           : const BoxDecoration(),
                       child: Icon(
                         Get.currentRoute == '/task'
-                            ? Ionicons.cube
-                            : Ionicons.cube_outline,
+                            ? UniconsLine.cube
+                            : UniconsLine.cube,
                         color: Colors.grey,
                         size: 30,
                       ),
@@ -125,8 +126,8 @@ class SideBar extends StatelessWidget {
                           : const BoxDecoration(),
                       child: Icon(
                         Get.currentRoute == '/friends'
-                            ? Ionicons.heart
-                            : Ionicons.heart_outline,
+                            ? UniconsLine.heart
+                            : UniconsLine.heart,
                         color: Colors.grey,
                         size: 30,
                       ),
@@ -162,8 +163,8 @@ class SideBar extends StatelessWidget {
                           : const BoxDecoration(),
                       child: Icon(
                         Get.currentRoute == '/profile'
-                            ? Ionicons.person
-                            : Ionicons.person_outline,
+                            ? UniconsLine.user
+                            : UniconsLine.user,
                         color: Colors.grey,
                         size: 30,
                       ),
@@ -182,71 +183,6 @@ class SideBar extends StatelessWidget {
                   onTap: () => Get.toNamed(Routes.PROFILE),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 100,
-              child: Center(
-                  child: InkWell(
-                child: Column(children: [
-                  Container(
-                    height: 40,
-                    width: 100,
-                    decoration: Get.currentRoute == '/home'
-                        ? BoxDecoration(
-                            borderRadius: BorderRadius.circular(40),
-                            color: Colors.white,
-                          )
-                        : const BoxDecoration(),
-                    child: Icon(
-                      Get.currentRoute == '/home'
-                          ? Ionicons.desktop
-                          : Ionicons.desktop_outline,
-                      color: Colors.grey,
-                      size: 30,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  Text(
-                    'Home',
-                    style: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 16,
-                    ),
-                  ),
-                ]),
-              )),
-            ),
-            SizedBox(
-              height: 100,
-              child: Center(
-                  child: InkWell(
-                child: Column(children: [
-                  Container(
-                    height: 40,
-                    width: 100,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(40),
-                        color: Colors.white),
-                    child: const Icon(
-                      Ionicons.desktop,
-                      color: Colors.grey,
-                      size: 30,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  Text(
-                    'Home',
-                    style: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 16,
-                    ),
-                  ),
-                ]),
-              )),
             ),
           ],
         )),

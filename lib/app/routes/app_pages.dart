@@ -20,10 +20,11 @@ class AppPages {
 
   static final routes = [
     GetPage(
-      name: _Paths.HOME,
-      page: () => HomeView(),
-      binding: HomeBinding(),
-    ),
+        name: _Paths.HOME,
+        page: () => HomeView(),
+        binding: HomeBinding(),
+        transition: Transition.upToDown,
+        transitionDuration: Duration(seconds: 2)),
     GetPage(
       name: _Paths.LOGIN,
       page: () => const LoginView(),
@@ -31,17 +32,19 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.TASK,
-      page: () => const TaskView(),
+      page: () => TaskView(),
       binding: TaskBinding(),
+      transition: Transition.leftToRight,
+      transitionDuration: const Duration(milliseconds: 250),
     ),
     GetPage(
       name: _Paths.FRIENDS,
-      page: () => const FriendsView(),
+      page: () => FriendsView(),
       binding: FriendsBinding(),
     ),
     GetPage(
       name: _Paths.PROFILE,
-      page: () => const ProfileView(),
+      page: () => ProfileView(),
       binding: ProfileBinding(),
     ),
   ];

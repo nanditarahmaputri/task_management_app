@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:task_management_app/app/routes/app_pages.dart';
 import 'package:task_management_app/app/utils/style/AppColor.dart';
+import 'package:unicons/unicons.dart';
 
 class header extends StatelessWidget {
   const header({
@@ -60,8 +61,7 @@ class header extends StatelessWidget {
           const SizedBox(
             width: 20,
           ),
-          const Icon(Ionicons.notifications,
-              color: AppColors.primaryText, size: 30),
+          const Icon(UniconsLine.bell, color: AppColors.primaryText, size: 30),
           const SizedBox(
             width: 20,
           ),
@@ -90,7 +90,7 @@ class header extends StatelessWidget {
                   width: 5,
                 ),
                 Icon(
-                  Ionicons.log_out_outline,
+                  UniconsLine.signout,
                   color: AppColors.primaryText,
                   size: 30,
                 ),
