@@ -19,17 +19,17 @@ class MyFriends extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  Text(
+                  const Text(
                     'My Friends',
                     style: TextStyle(
                       color: AppColors.primaryText,
                       fontSize: 30,
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   GestureDetector(
                     onTap: () => Get.toNamed(Routes.FRIENDS),
-                    child: Text(
+                    child: const Text(
                       'more',
                       style: TextStyle(
                         color: AppColors.primaryText,
@@ -37,7 +37,7 @@ class MyFriends extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Icon(
+                  const Icon(
                     UniconsLine.skip_forward,
                     color: AppColors.primaryText,
                   )
@@ -51,11 +51,10 @@ class MyFriends extends StatelessWidget {
                 child: GridView.builder(
                     shrinkWrap: true,
                     itemCount: 8,
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 3,
-                            crossAxisSpacing: 20,
-                            mainAxisSpacing: 20),
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: !context.isPhone ? 3 : 2,
+                        crossAxisSpacing: 20,
+                        mainAxisSpacing: 20),
                     itemBuilder: (context, index) {
                       return Column(
                         children: [

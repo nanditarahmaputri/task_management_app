@@ -4,7 +4,9 @@ import 'package:get/get.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:task_management_app/app/utils/style/AppColor.dart';
 import 'package:task_management_app/app/utils/widget/header.dart';
+import 'package:task_management_app/app/utils/widget/myfriends.dart';
 import 'package:task_management_app/app/utils/widget/sideBar.dart';
+import 'package:unicons/unicons.dart';
 
 import '../controllers/friends_controller.dart';
 
@@ -88,7 +90,9 @@ class FriendsView extends GetView<FriendsController> {
                 // content / isi page / screen
                 Expanded(
                   child: Container(
-                    padding: const EdgeInsets.all(50),
+                    padding: !context.isPhone
+                        ? const EdgeInsets.all(50)
+                        : const EdgeInsets.all(20),
                     margin: !context.isPhone
                         ? const EdgeInsets.all(10)
                         : const EdgeInsets.all(0),
@@ -96,8 +100,71 @@ class FriendsView extends GetView<FriendsController> {
                       color: Colors.white,
                       borderRadius: !context.isPhone
                           ? BorderRadius.circular(50)
-                          : BorderRadius.circular(20),
+                          : BorderRadius.circular(30),
                     ),
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            'People You May Know',
+                            style: TextStyle(
+                                fontSize: 30, color: AppColors.primaryText),
+                          ),
+                          SizedBox(
+                            height: 200,
+                            child: ListView.builder(
+                              scrollDirection: Axis.horizontal,
+                              shrinkWrap: true,
+                              clipBehavior: Clip.antiAlias,
+                              itemCount: 10,
+                              itemBuilder: (context, index) {
+                                return Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: Stack(
+                                    children: [
+                                      ClipRRect(
+                                        borderRadius: BorderRadius.circular(50),
+                                        child: const Image(
+                                          image: NetworkImage(
+                                              'https://images.unsplash.com/photo-1505033575518-a36ea2ef75ae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1372&q=80'),
+                                        ),
+                                      ),
+                                      const Positioned(
+                                        bottom: 10,
+                                        left: 20,
+                                        child: Text(
+                                          'Alicia Jasmin',
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                      ),
+                                      Positioned(
+                                        bottom: 0,
+                                        right: 0,
+                                        child: SizedBox(
+                                          height: 36,
+                                          width: 36,
+                                          child: ElevatedButton(
+                                            onPressed: () {},
+                                            style: ElevatedButton.styleFrom(
+                                              padding: EdgeInsets.only(),
+                                              shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(50),
+                                              ),
+                                            ),
+                                            child:
+                                                Icon(UniconsLine.plus_circle),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                );
+                              },
+                            ),
+                          ),
+                          MyFriends(),
+                        ]),
                   ),
                 ),
               ],
