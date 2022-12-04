@@ -7,7 +7,18 @@ import 'app/routes/app_pages.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  if (kIsWeb) {
+    await Firebase.initializeApp(
+        name: 'SecondaryApp',
+        options: const FirebaseOptions(
+            appId: 'my_appId',
+            apiKey: 'my_apiKey',
+            messagingSenderId: 'my_messagingSenderId',
+            projectId: 'my_projectId'));
+  } else {
+    await Firebase.initializeApp();
+  }
+
   runApp(
     GetMaterialApp(
       debugShowCheckedModeBanner: false,
